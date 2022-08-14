@@ -1,0 +1,8 @@
+### Pycharm Stuff
+.idea/
+
+### Python Stuff
+*.egg-info/
+__pycache__/
+
+### Project Stuff

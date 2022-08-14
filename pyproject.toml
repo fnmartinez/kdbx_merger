@@ -1,0 +1,57 @@
+[project]
+name = "kdbx_merger"
+description = "Tool to merge KDBX Files"
+version = "0.0.1"
+
+authors = [
+    { name = "Facundo Martinez" },
+]
+
+readme = "README.md"
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.10",
+]
+
+requires-python = ">= 3.10"
+
+dependencies = [
+    "click",
+    "pykeepass",
+    "questionary"
+]
+
+[project.optional-dependencies]
+tests = [
+    "black",
+    "pytest >= 6.2.5",
+    "tox"
+]
+
+[build-system]
+requires = ["setuptools >= 60.0.1", "wheel", "tomli"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 120
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py310
+requires =
+    setuptools >= 60.0.1
+    wheel
+    tomli
+
+[gh-actions]
+python =
+    3.10: py310
+
+[testenv]
+deps =
+    pytest >= 6.2.5
+
+commands = pytest
+"""
